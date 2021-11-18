@@ -34,7 +34,10 @@ app.get('/', function(req, res, next){
 
 app.get('/:user/status/:id', function(req, res, next){
     console.log("tweet page requested")
-    console.log("req.params", req.perams)
+    console.log(" -- req.params.person:", req.params.person)
+    var person = req.params.person
+    if(availablePeople)
+    res.status(200).sendFile(_dirname + '/public/person')
     next()
 })
 
